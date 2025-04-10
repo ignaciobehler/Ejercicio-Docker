@@ -1,0 +1,12 @@
+services:
+  clientemqtt:
+    build:
+      context: ./clienteMqtt
+      dockerfile: Dockerfile
+    container_name: clientemqtt
+    environment:
+      - TZ=America/Argentina/Buenos_Aires 
+      - SERVIDOR=${SERVIDOR}
+      - TOPICO1=${TOPICO1}
+      - TOPICO2=${TOPICO2}
+    restart: unless-stopped
